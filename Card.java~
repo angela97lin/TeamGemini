@@ -81,7 +81,7 @@ public class Card extends Component{
     // public void draw(Graphics g){
     // }
     
-    public void paint(Graphics g) {
+    public void draw(Graphics g) {
 	g.drawImage(img, 0, 0, null);
     }
 
