@@ -33,7 +33,7 @@ public class GamePlay extends JPanel implements Runnable{
 	
     }
 
-    private void define(){
+    public void define(){
 
     }
     

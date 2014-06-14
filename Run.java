@@ -15,13 +15,14 @@ public class Run{
 	driver.setLocationRelativeTo(null);
 	driver.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	driver.setLayout(new GridLayout(1,1,0,0));
+	driver.setVisible(true);
 	init();
     }
 
     public void init(){
 	GamePlay screen = new GamePlay();
 	driver.add(screen);
-	driver.setVisible(true);
+	
 
 	
     }
