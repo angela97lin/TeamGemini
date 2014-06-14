@@ -7,7 +7,7 @@ public class Run{
     public static Dimension size = new Dimension(900,900);
     public static JFrame driver;
     
-    public void Run(){
+    public Run(){
 	driver = new JFrame("Driver Frame");
 	driver.setTitle(title);
 	driver.setSize(size);
@@ -15,13 +15,13 @@ public class Run{
 	driver.setLocationRelativeTo(null);
 	driver.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	driver.setLayout(new GridLayout(1,1,0,0));
-	driver.setVisible(true);
 	init();
     }
 
     public void init(){
 	GamePlay screen = new GamePlay();
 	driver.add(screen);
+	driver.setVisible(true);
 	
 
 	
