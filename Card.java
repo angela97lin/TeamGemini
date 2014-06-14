@@ -105,11 +105,16 @@ public class Card extends Component{
        }
     }
 
-    public void setX(int val){
+    public void setXCor(int val){
 	px = val;
     }
 
-    public void setY(int val){
+    public void reveal(int num){
+	changeFace();
+	setXCor((getWidth/2+37)+ num*74);
+    }
+
+    public void setYCor(int val){
 	py = val;
     }
 
