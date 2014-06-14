@@ -10,9 +10,10 @@ public class GamePlay extends JPanel implements Runnable{
     public Thread thread;
     public static boolean isFirst;
     public static int myWidth,myHeight;
-    private BufferedImage myImage;
+    public static BufferedImage myImage,image, image2;
     public static int state;
     public static Play play;
+    public static Setting setting;
 
     public GamePlay(Run run){
 	Run.driver.addMouseListener(new Key());
@@ -21,9 +22,11 @@ public class GamePlay extends JPanel implements Runnable{
 
 	try{
 	    myImage = ImageIO.read(new File("background.jpg"));
+	    image = ImageIO.read(new File("girl.png"));
+	    image2 = ImageIO.read(new File("mafia.png"));
 	}catch(Exception e){}
 	isFirst = true;
-	state = 1;
+	state = 2;
     }
 
     public void paintComponent(Graphics g){
@@ -38,11 +41,15 @@ public class GamePlay extends JPanel implements Runnable{
 	if (state == 1){
 	    play.draw(g);
 	}
+	if (state == 2){
+	    setting.draw(g);
+	}
 	
     }
 
     public void define(){
 	play = new Play();
+	setting = new Setting();
     }
     
     public void run(){

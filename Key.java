@@ -28,6 +28,16 @@ public class Key implements MouseMotionListener, MouseListener{
 	//I think this goes here..
 	//if the state == the settings one
 	//then set profPic to the image that is currently in the boundaries
+	if(GamePlay.state == 1){
+
+	}
+	if(GamePlay.state == 2){
+
+	}
+	if(GamePlay.state == 3){
+
+	}
+	
     }
 
     public void mouseMoved(MouseEvent e){
