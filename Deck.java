@@ -73,12 +73,13 @@ public class Deck {
 	    p.getHand().add(half.remove(half.size()-1));
 	    comp.getHand().add(half.remove(half.size()-1));
 	}
+	p.sort();
     }
 
 
     public static void main(String[] args){
         Deck d = new Deck();
-	//System.out.println(d);
+	System.out.println(d);
 	ArrayList<Card> e = new ArrayList<Card>();
 	Player p = new Player();
 	//Computer c = new Computer(e,5);
