@@ -27,7 +27,7 @@ public class GamePlay extends JPanel implements Runnable{
 	    image2 = ImageIO.read(new File("mafia.png"));
 	}catch(Exception e){}
 	isFirst = true;
-	state = 2;
+	state = 1;
 	ID = 1;
     }
 
