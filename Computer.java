@@ -23,6 +23,7 @@ public class Computer {
      */
     public Computer(){
 	lvl = 1;
+	hand = new Hand();
     }
     
     public Computer(ArrayList<Card> cards, int lvl){
