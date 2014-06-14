@@ -21,13 +21,8 @@ public class Computer {
      * Trickery from 1-21    Easy 1-7, Medium 8-14, Hard 15-21
      * Gullibility from 1-21 Easy 1-7, Medium 8-14, Hard 15-21
      */
-    public Computer(){
-	lvl = 1;
-	hand = new Hand();
-    }
-    
     public Computer(ArrayList<Card> cards, int lvl){
-	hand = new Hand(cards);
+        hand = new Hand(cards);
         this.lvl = lvl;
         if(lvl == 1) {
             trickery = (int)(Math.random() * 6) + 1;
