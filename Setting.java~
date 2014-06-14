@@ -9,20 +9,18 @@ import java.awt.event.*;
 
 public class Setting extends JPanel {  
 
-    BufferedImage image, image2;
-    public Setting(){
-	try {
-	    image = ImageIO.read(new File("girl.jpeg"));
-	    image2 = ImageIO.read(new File("mafia.png"));
-	} catch (IOException e) {}
-    }
 
-    public void draw(Graphics g, int x, int y){
-	g.drawImage(image, x, y, null);
-	g.drawImage(image2, x, y, null);
 
-    }
-	
+
+
+
+
+
+
+
+    public void draw(Graphics g){
+	//draw pics
+	//Mouse
 
 
 
