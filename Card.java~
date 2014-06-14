@@ -33,7 +33,7 @@ public class Card extends Component{
 	faceup = false; // initially they are all face down
 
 	/*****************************************************
-	Note: the code below displays the image of the card but only when it the gif file is in the same file
+	Note: the code below displays the image of the card but only when it= the gif file is in the same file
         Still need to work on:
         display face down card or face up card
         if (faceup == false) {display face down card }
@@ -105,16 +105,11 @@ public class Card extends Component{
        }
     }
 
-    public void setXCor(int val){
+    public void setX(int val){
 	px = val;
     }
 
-    public void reveal(int num){
-	changeFace();
-	setXCor((getWidth/2+37)+ num*74);
-    }
-
-    public void setYCor(int val){
+    public void setY(int val){
 	py = val;
     }
 

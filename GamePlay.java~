@@ -9,12 +9,13 @@ public class GamePlay extends JPanel implements Runnable{
     
     public Thread thread;
     public static boolean isFirst;
-    public static int myWidth,myHeight;
+    public static int myWidth, myHeight;
     public static BufferedImage myImage,image, image2;
     public static int state;
     public static Play play;
     public static Setting setting;
     public static int ID;
+    public static Point p;
 
     public GamePlay(Run run){
 	Run.driver.addMouseListener(new Key());

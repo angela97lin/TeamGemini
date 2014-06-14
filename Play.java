@@ -29,7 +29,7 @@ public class Play{
 	placed = 0;
 	for (int i = 0; i < p.getHand().size();i++){
 	    if (p.getHand().getCard(i).selected()){
-		cs.add(p.getHand().remove(getCard(i)));
+		cs.add(p.getHand().remove(p.getHand().getCard(i)));
 		placed ++;
 	    }
 	}
@@ -43,7 +43,7 @@ public class Play{
 	}
     }
 	
-
+    
 
 
 
@@ -54,21 +54,27 @@ public class Play{
 	if (p.getHand().size() > 13){
 
 	    for (int i = 0; i < 13;i++){
-		p.getHand().getCard(i).draw(g,(GamePlay.myWidth/2
-					       -((c.getHand().size()*74)/2))
-					    +i*74,450);
+		p.getHand().getCard(i).setXCor((GamePlay.myWidth/2
+						-((c.getHand().size()*74)/2))
+					       +i*7);
+		p.getHand().getCard(i).setYCor(450);
+		p.getHand().getCard(i).draw(g);
 	    }
 	    for (int i = 13; i < p.getHand().size();i++){
-		p.getHand().getCard(i).draw(g,(GamePlay.myWidth/2
+		p.getHand().getCard(i).setXCor((GamePlay.myWidth/2
 					       -((c.getHand().size()*74)/2))
-					    +(i-13)*74,571);
+					       +(i-13)*74);
+		p.getHand().getCard(i).setYCor(571);
+		p.getHand().getCard(i).draw(g);
 	    }
 	}
 	else { 	    
 	    for (int i = 0; i < p.getHand().size();i++){
-		p.getHand().getCard(i).draw(g,(GamePlay.myWidth/2
+		p.getHand().getCard(i).setXCor((GamePlay.myWidth/2
 					       -((c.getHand().size()*74)/2))
-					    +i*74,450);
+					       +i*74);
+		p.getHand().getCard(i).setYCor(450);
+		p.getHand().getCard(i).draw(g);
 	    }
 
 	}
@@ -76,23 +82,29 @@ public class Play{
 	if (c.getHand().size() > 13){
 
 	    for (int i = 0; i < 13;i++){
-		c.getHand().getCard(i).draw(g,(GamePlay.myWidth/2
+		c.getHand().getCard(i).setXCor((GamePlay.myWidth/2
 					       -((c.getHand().size()*74)/2))
-					    +i*74,130);
+					       +i*74);
+		c.getHand().getCard(i).setYCor(130);
+		c.getHand().getCard(i).draw(g);
 	    }
 	    for (int i = 13; i < c.getHand().size();i++){
-		c.getHand().getCard(i).draw(g,(GamePlay.myWidth/2
+		c.getHand().getCard(i).setXCor((GamePlay.myWidth/2
 					       -((c.getHand().size()*74)/2))
-					    +(i-13)*74,9);
+					       +(i-13)*74);
+		c.getHand().getCard(i).setYCor(9);
+		c.getHand().getCard(i).draw(g);
 	    }
 	}
 
 	else {
 
 	    for (int i = 0; i < c.getHand().size();i++){
-		c.getHand().getCard(i).draw(g,(GamePlay.myWidth/2
+		c.getHand().getCard(i).setXCor((GamePlay.myWidth/2
 					       -((c.getHand().size()*74)/2))
-					    +i*74,130);
+					       +i*74);
+		c.getHand().getCard(i).setYCor(130);
+		c.getHand().getCard(i).draw(g);
 	    }
 	}
     }

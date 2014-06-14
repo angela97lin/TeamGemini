@@ -25,7 +25,7 @@ public class Key implements MouseMotionListener, MouseListener{
 
     }
     public void mouseClicked(MouseEvent e){
-	Point p = e.getPoint();
+	p = e.getPoint();
 	//I think this goes here..
 	//if the state == the settings one
 	//then set profPic to the image that is currently in the boundaries

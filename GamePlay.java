@@ -59,6 +59,7 @@ public class GamePlay extends JPanel implements Runnable{
     public void define(){
 	play = new Play();
 	setting = new Setting();
+	p = new Point(0,0);
     }
     
     public void run(){
