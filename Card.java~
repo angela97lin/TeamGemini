@@ -20,7 +20,7 @@ public class Card extends Component{
     // private String faceValue; // 2-10, J, Q, K, A
     BufferedImage img,bck;
     private boolean faceup;
-    private mx,my,px,py;
+    private int mx,my,px,py;
 
     //CONSTRUCTOR - sets the intValue and suit
     public Card(int x, String s) {
@@ -113,8 +113,15 @@ public class Card extends Component{
 	py = val;
     }
 
-    public move(){
-	
+    public void getX(){
+	return px;
+    }
+
+    public void getY(){
+	return py;
+    }
+    //pops up card when selected by changing xcor/ycor
+    public void move(){
     }
 
     public static void main(String[] args){

@@ -113,11 +113,11 @@ public class Card extends Component{
 	py = val;
     }
 
-    public void getX(){
+    public int getXCor(){
 	return px;
     }
 
-    public void getY(){
+    public int getYCor(){
 	return py;
     }
     //pops up card when selected by changing xcor/ycor
