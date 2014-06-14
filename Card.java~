@@ -20,6 +20,7 @@ public class Card extends Component{
     // private String faceValue; // 2-10, J, Q, K, A
     BufferedImage img,bck;
     private boolean faceup;
+    private mx,my,px,py;
 
     //CONSTRUCTOR - sets the intValue and suit
     public Card(int x, String s) {
@@ -43,16 +44,18 @@ public class Card extends Component{
 	*****************************************************/
 
 	//	else {
-	    String filename = intValue + s.substring(0,1).toLowerCase() + ".gif";
-	    try {
-		img = ImageIO.read(new File("images/" + filename));
-		bck = ImageIO.read(new File("images/back.png"));
-	    }
-	    catch (IOException e){
-	    }
-	    //	}
-	
-	
+	String filename = intValue + s.substring(0,1).toLowerCase() + ".gif";
+	try {
+	    img = ImageIO.read(new File("images/" + filename));
+	    bck = ImageIO.read(new File("images/back.png"));
+	}
+	catch (IOException e){
+	}
+	//	}
+	px = 0;
+	py = 0;
+	mx = px;
+	my = py;
     }
 
     //public accessor to intValue
@@ -100,6 +103,18 @@ public class Card extends Component{
         } else {
            return new Dimension(img.getWidth(null), img.getHeight(null));
        }
+    }
+
+    public void setX(int val){
+	px = val;
+    }
+
+    public void setY(int val){
+	py = val;
+    }
+
+    public move(){
+	
     }
 
     public static void main(String[] args){
