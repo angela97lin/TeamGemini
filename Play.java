@@ -36,8 +36,9 @@ public class Play{
     }
     
     public void bs(){
+	int cardNum = 1;
 	while(placed > 0){
-	    cs.pop().changeFace();
+	    cs.pop().reveal(cardNum);
 	    placed --;
 	}
     }
