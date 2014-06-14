@@ -37,6 +37,9 @@ public class GamePlay extends JPanel implements Runnable{
 	for (int i = 0; i < p.getHand().size();i++){
 	    p.getHand().getCard(i).draw(g,145+i*53,550);
 	}
+	for (int i = 0; i < c.getHand().size();i++){
+	    c.getHand().getCard(i).draw(g,145+i*53,53);
+	}
 	
     }
 
