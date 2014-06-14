@@ -69,7 +69,7 @@ public class Deck {
     //takes an ArrayList (in our case, half), a Computer, and a Player as its parameters. Then, using the ArrayList specified in the parameters, it distributes 13 cards to each player.
     //Only used at the beginning of each game and takes advantage of how our Deck is already shuffled. Woohoo!
     public void deal(Computer comp, Player p){
-	for (int i = 0; i<13; i++){
+	for (int i = 0; i<8; i++){
 	    p.getHand().add(half.remove(half.size()-1));
 	    p.getHand().getCard(i).changeFace();
 	    comp.getHand().add(half.remove(half.size()-1));

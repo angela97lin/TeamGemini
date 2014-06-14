@@ -23,10 +23,12 @@ public class Play{
 
     public void draw(Graphics g){
 	for (int i = 0; i < p.getHand().size();i++){
-	    p.getHand().getCard(i).draw(g,145+i*53,550);
+	    p.getHand().getCard(i).draw(g,(145+((13 - c.getHand().size()))*53)
+					   +i*53,550);
 	}
 	for (int i = 0; i < c.getHand().size();i++){
-	    c.getHand().getCard(i).draw(g,145+i*53,53);
+	    c.getHand().getCard(i).draw(g,(145+((13 - c.getHand().size()))*53)
+					+i*53,53);
 	}
     }
     
