@@ -81,7 +81,8 @@ public class Deck {
 	System.out.println(d);
 	ArrayList<Card> e = new ArrayList<Card>();
 	Player p = new Player();
-	Computer c = new Computer(e,5);
+	//Computer c = new Computer(e,5);
+	Computer c = new Computer();
 	d.deal(c, p);
 	System.out.println(p.getHand());
     }
