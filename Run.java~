@@ -19,7 +19,7 @@ public class Run{
     }
 
     public void init(){
-	GamePlay screen = new GamePlay();
+	GamePlay screen = new GamePlay(this);
 	driver.add(screen);
 	driver.setVisible(true);
 	
