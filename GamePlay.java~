@@ -41,10 +41,10 @@ public class GamePlay extends JPanel implements Runnable{
 	}
 	g.drawImage(myImage,0,0,getWidth(),getHeight(),this);
 	if(ID == 1){
-	    g.drawImage(image,919,0,null);
+	    g.drawImage(image,919,myHeight/2-60,null);
 	}
 	if(ID == 2){
-	    g.drawImage(image2,919,0,null);
+	    g.drawImage(image2,919,myHeight/2-60,null);
 	}
 	if (state == 1){
 	    play.draw(g);
