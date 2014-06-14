@@ -35,7 +35,8 @@ public class GamePlay extends JPanel implements Runnable{
 	}
 	g.drawImage(myImage,0,0,getWidth(),getHeight(),this);
 	for (int i = 0; i < p.getHand().size();i++){
-	    p.getHand().getCard(i).draw(g);
+	    p.getHand().getCard(i).draw(g,i*50,300);
+	    System.out.println( p.getHand().getCard(i).toString());
 	}
 	
     }

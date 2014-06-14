@@ -4,7 +4,7 @@ import java.awt.*;
 public class Run{
     
     public static String title = "BlueStuff";
-    public static Dimension size = new Dimension(900,900);
+    public static Dimension size = new Dimension(1000,700);
     public static JFrame driver;
     
     public Run(){

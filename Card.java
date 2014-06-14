@@ -81,8 +81,8 @@ public class Card extends Component{
     // public void draw(Graphics g){
     // }
     
-    public void draw(Graphics g) {
-	g.drawImage(img, 0, 0, null);
+    public void draw(Graphics g,int x, int y) {
+	g.drawImage(img, x, y, null);
     }
 
 
