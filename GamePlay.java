@@ -11,11 +11,11 @@ public class GamePlay extends JPanel implements Runnable{
     public static boolean isFirst;
     public static int myWidth,myHeight;
     private BufferedImage myImage;
-    public static Deck deck;
-    public static Player p;
-    public static Computer c;
-    
-    public GamePlay(){
+    public static int state;
+    public static Play play;
+
+    public GamePlay(Run run){
+	Run.driver.addMouseListener(new Key());
 	thread = new Thread(this);
 	thread.start();
 
@@ -23,6 +23,7 @@ public class GamePlay extends JPanel implements Runnable{
 	    myImage = ImageIO.read(new File("background.jpg"));
 	}catch(Exception e){}
 	isFirst = true;
+	state = 1;
     }
 
     public void paintComponent(Graphics g){
@@ -34,20 +35,14 @@ public class GamePlay extends JPanel implements Runnable{
 	    isFirst = false;
 	}
 	g.drawImage(myImage,0,0,getWidth(),getHeight(),this);
-	for (int i = 0; i < p.getHand().size();i++){
-	    p.getHand().getCard(i).draw(g,145+i*53,550);
-	}
-	for (int i = 0; i < c.getHand().size();i++){
-	    c.getHand().getCard(i).draw(g,145+i*53,53);
+	if (state == 1){
+	    play.draw(g);
 	}
 	
     }
 
     public void define(){
-	deck = new Deck();
-	p = new Player();
-	c = new Computer();
-	deck.deal(c,p);
+	play = new Play();
     }
     
     public void run(){
