@@ -82,7 +82,7 @@ public class Deck {
 	ArrayList<Card> e = new ArrayList<Card>();
 	Player p = new Player();
 	Computer c = new Computer(e,5);
-	d.deal(half, c, p);
+	d.deal(c, p);
 	System.out.println(p.getHand());
     }
 

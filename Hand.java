@@ -50,7 +50,8 @@ public class Hand {
         hand.remove(hand.indexOf(c));
         return c;
     }
-    
+
+
     public Card remove(int x) {
         int pos = 0;
         Card retCard = null;
@@ -74,6 +75,10 @@ public class Hand {
 	//create instance of sorting class
 	//call sorting class's sort method
 	//viola!
+    }
+
+    public Card getCard(int pos){
+	return hand.get(pos);
     }
 
    public String toString(){

@@ -45,7 +45,7 @@ public class Card extends Component{
 	//	else {
 	    String filename = intValue + s.substring(0,1).toLowerCase() + ".gif";
 	    try {
-		img = ImageIO.read(new File(filename));
+		img = ImageIO.read(new File("images/" + filename));
 	    }
 	    catch (IOException e){
 	    }

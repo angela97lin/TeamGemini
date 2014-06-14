@@ -13,6 +13,7 @@ public class Player {
     //CONSTRUCTOR: instantiate player with a hand
     public Player(){
 	//myHand = new Hand(cards); // gets it from the Driver class
+	myHand = new Hand();
     }
 
 
