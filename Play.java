@@ -37,7 +37,8 @@ public class Play{
     
     public void bs(){
 	while(placed > 0){
-	    cs.pop();
+	    cs.pop().changeFace();
+	    placed --;
 	}
     }
 	
