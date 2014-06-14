@@ -4,6 +4,8 @@ import javax.imageio.*;
 import java.util.*;
 import java.io.*;
 import java.awt.event.*;
+import java.awt.image.*;
+
 // A GUI program is written as a subclass of Frame - the top-level container  
 // This subclass inherits all properties from Frame, e.g., title, icon, buttons, content-pane
 
