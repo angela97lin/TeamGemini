@@ -25,15 +25,15 @@ public class Deck {
 	    }
 	}
 	
-	  Random r = new Random();
-	  for (int i = 0; i < deck.size()*2; i++){
+	Random r = new Random();
+	for (int i = 0; i < deck.size()*2; i++){
 	    int rand1 = r.nextInt(deck.size());
 	    int rand2 = r.nextInt(deck.size());
 
 	    swap(rand1,rand2);
 	}
 	
-	  half();
+	half();
     }
     //Used in the shuffling of our deck; it swaps two cards in their positions
     public void swap(int index1, int index2){
