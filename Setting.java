@@ -9,7 +9,7 @@ import java.awt.image.*;
 // A GUI program is written as a subclass of Frame - the top-level container  
 // This subclass inherits all properties from Frame, e.g., title, icon, buttons, content-pane
 
-public class Setting extends JPanel {  
+public class Setting {  
 
     BufferedImage image, image2;
     public Setting(){
