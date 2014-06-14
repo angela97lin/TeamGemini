@@ -90,6 +90,9 @@ public class Card extends Component{
 	}
     }
 
+    public void changeFace(){
+	faceup = !faceup;
+    }
 
     public Dimension getPreferredSize() {
         if (img == null) {
