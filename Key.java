@@ -24,13 +24,15 @@ public class Key implements MouseMotionListener, MouseListener{
     public void mouseDragged(MouseEvent e){
 
     }
+
     public void mouseClicked(MouseEvent e){
-	//I think this goes here..
-	//if the state == the settings one
+	Point p = MouseInfo.getPointerInfo().getLocation();
+	int x = p.x;
+	int y = p.y;
 	//then set profPic to the image that is currently in the boundaries
 	if(GamePlay.state == 1){//game mode
-	    Point p = MouseInfo.getPointerInfo().getLocation();
-	}
+	    // if () //if on a specific card
+		}
 	if(GamePlay.state == 2){//settings page
 
 	}

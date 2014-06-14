@@ -14,6 +14,7 @@ public class GamePlay extends JPanel implements Runnable{
     public static int state;
     public static Play play;
     public static Setting setting;
+    public static int ID;
 
     public GamePlay(Run run){
 	Run.driver.addMouseListener(new Key());
@@ -27,6 +28,7 @@ public class GamePlay extends JPanel implements Runnable{
 	}catch(Exception e){}
 	isFirst = true;
 	state = 2;
+	ID = 1;
     }
 
     public void paintComponent(Graphics g){
@@ -38,6 +40,12 @@ public class GamePlay extends JPanel implements Runnable{
 	    isFirst = false;
 	}
 	g.drawImage(myImage,0,0,getWidth(),getHeight(),this);
+	if(ID == 1){
+	    g.drawImage(image,919,0,null);
+	}
+	if(ID == 2){
+	    g.drawImage(image2,919,0,null);
+	}
 	if (state == 1){
 	    play.draw(g);
 	}
