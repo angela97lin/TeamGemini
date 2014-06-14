@@ -22,6 +22,7 @@ public class GamePlay extends JPanel implements Runnable{
 	try{
 	    myImage = ImageIO.read(new File("background.jpg"));
 	}catch(Exception e){}
+	isFirst = true;
     }
 
     public void paintComponent(Graphics g){
@@ -33,10 +34,9 @@ public class GamePlay extends JPanel implements Runnable{
 	    isFirst = false;
 	}
 	g.drawImage(myImage,0,0,getWidth(),getHeight(),this);
-	p.getHand().getCard(0).draw(g);
-	//for (int i = 0; i < p.getHand().size();i++){
-	    // p.getHand().getCard(i).draw(g);
-	//}
+	for (int i = 0; i < p.getHand().size();i++){
+	    p.getHand().getCard(i).draw(g);
+	}
 	
     }
 
