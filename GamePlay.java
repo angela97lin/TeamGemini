@@ -11,6 +11,9 @@ public class GamePlay extends JPanel implements Runnable{
     public static boolean isFirst;
     public static int myWidth,myHeight;
     private BufferedImage myImage;
+    public static Deck deck;
+    public static Player p;
+    public static Computer c;
     
     public GamePlay(){
 	thread = new Thread(this);
@@ -34,7 +37,10 @@ public class GamePlay extends JPanel implements Runnable{
     }
 
     public void define(){
-
+	deck = new Deck();
+	p = new Player();
+	c = new Computer();
+	deck.deal(c,p);
     }
     
     public void run(){

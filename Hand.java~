@@ -67,6 +67,9 @@ public class Hand {
     }
     //will implement a sort of our choosing to sort the cards :)
     public void sort() {
+	//create instance of sorting class
+	//call sorting class's sort method
+	//viola!
     }
 
    public String toString(){

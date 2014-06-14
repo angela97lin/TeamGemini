@@ -8,8 +8,12 @@ import java.io.*;
 
 public class Hand {
 
-    private ArrayList<Card> hand = new ArrayList<Card>();
+    private ArrayList<Card> hand;// = new ArrayList<Card>();
     
+    public Hand(){
+	hand = new ArrayList<Card>();
+    }
+
     public Hand(ArrayList<Card> h) {
         hand = h;
     }
