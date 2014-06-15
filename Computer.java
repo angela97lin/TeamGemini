@@ -9,7 +9,7 @@ public class Computer {
     private Hand hand;
     private int trickery; //how good the computer will be at BS-ing
     private int gullibility; //how easily the computer can fall to someone else's BS
-    private int lvl; //Level of difficulty, 1-3 (1 = easy, 2 = medium, 3 = hard)
+    public static int lvl; //Level of difficulty, 1-3 (1 = easy, 2 = medium, 3 = hard)
     
     /*
      * Constructor will set up the Computer's cards as well as level of
@@ -29,6 +29,7 @@ public class Computer {
     public Computer(ArrayList<Card> cards, int lvl){
 	hand = new Hand(cards);
         this.lvl = lvl;
+	//sets stats based on lvl of the computer
         if(lvl == 1) {
             trickery = (int)(Math.random() * 6) + 1;
             gullibility = (int)(Math.random() * 6) + 1;
@@ -49,14 +50,14 @@ public class Computer {
      * makeMove() takes in one parameter, the numerical value of the card it
      * expects next. This is to allow computer to check to see if it has that
      * value.
-     *
-     * NOTE TO SELF: Finish the makeMove method!!!! -MR
+
      */
-    
-    public String makeMove(int x) {
+
+    public String makeMove() {
+int nextVal = Play.cs.
         String retStr = "";
         
-        if (hand.hasCard(x)) { //if the computer does have a card with
+        if (hand.hasCard(VALUE GOES HERE)) { //if the computer does have a card with
             hand.remove(x);
         }
         return retStr;
