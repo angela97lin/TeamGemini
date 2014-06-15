@@ -74,6 +74,12 @@ public class GamePlay extends JPanel implements Runnable{
     
     public void run(){
 	while(true){
+	    if(!play.turn){
+		play.countDown--;
+		if(play.countDown == 0){
+		    repaint();
+		}
+	    }
 	    if (stuff == 1){
 		repaint();
 		stuff = 0;
@@ -81,9 +87,9 @@ public class GamePlay extends JPanel implements Runnable{
 
 	    
 
-	    /*try{
+	    try{
 		thread.sleep(1);//slows down running
-		}catch(Exception e){}*/
+	    }catch(Exception e){}
 	}
     }
 

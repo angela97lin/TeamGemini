@@ -43,8 +43,9 @@ public class CardStack{
 		g.add(stack.pop());
 	    }
 	}
-	Play.p.showHand();
-	Play.c.hideFace();
+	GamePlay.play.p.showHand();
+	GamePlay.play.deselect();
+	GamePlay.play.c.hideFace();
 	who = true;
 	
     }

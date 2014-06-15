@@ -15,6 +15,7 @@ public class Play{
     public static int count;
     public static boolean turn;
     public static boolean lie;
+    public static int countDown;
 
     public Play(){
 	define();
@@ -30,6 +31,7 @@ public class Play{
 	count = 0;
 	turn = true;
 	lie = false;
+	countDown = 1500;
     }
 
     public void go(){
@@ -110,7 +112,12 @@ public class Play{
 	g.drawString("BS!",225,406);
 	g.drawString("Unselect",200,306);
 	if(!turn){
-	    c.makeMove();
+	    if(countDown <= 0){
+		c.makeMove();
+		countDown = 1500;
+	    }
+	    
+	    
 	}
 	if(count != 0){
 	    bs(g);
