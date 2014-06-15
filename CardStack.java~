@@ -16,6 +16,8 @@ public class CardStack{
 
     public void add(Card c){
 	stack.add(c);
+	c.setXCor(GamePlay.myWidth/2-37);
+	c.setYCor(GamePlay.myHeight/2-60);
     }
 
 

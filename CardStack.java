@@ -3,19 +3,19 @@ import java.io.*;
 
 public class CardStack{
 
-    private ArrayList<Card> stack;
+    private Stack<Card> stack;
 
 
     public CardStack(){
-	stack = new ArrayList<Card>();
+	stack = new Stack<Card>();
     }
 
     public Card pop(){
-	return stack.remove(stack.size()-1);
+	return stack.pop();
     }
 
     public void add(Card c){
-	stack.add(c);
+	stack.push(c);
 	c.setXCor(GamePlay.myWidth/2-37);
 	c.setYCor(GamePlay.myHeight/2-60);
     }
