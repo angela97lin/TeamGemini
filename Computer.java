@@ -7,6 +7,8 @@ import java.io.*;
 public class Computer {
 
     private Hand hand;
+    private ArrayList<String> goodEmotions;
+    private ArrayList<String> badEmotions;
     private int trickery; //how good the computer will be at BS-ing
     private int gullibility; //how easily the computer can fall to someone else's BS
     public static int lvl; //Level of difficulty, 1-3 (1 = easy, 2 = medium, 3 = hard)
@@ -24,6 +26,22 @@ public class Computer {
     public Computer(){
 	lvl = 1;
 	hand = new Hand();
+
+	goodEmotions.add("The Computer smiled.");
+	goodEmotions.add("The Computer grinned.");
+	goodEmotions.add("The Computer has a blank face.");
+	goodEmotions.add("The Computer yawned.");
+	goodEmotions.add("");
+	goodEmotions.add("");
+	goodEmotions.add("");
+
+	badEmotions.add("");
+	badEmotions.add("");
+	badEmotions.add("");
+	badEmotions.add("");
+	badEmotions.add("");
+	badEmotions.add("");
+	badEmotions.add("");
     }
     
     public Computer(ArrayList<Card> cards, int lvl){
@@ -52,17 +70,17 @@ public class Computer {
      * value.
 
      */
-
+    /*
     public String makeMove() {
-int nextVal = Play.cs.
-        String retStr = "";
+	//	int nextVal = Play.cs.peek();
+        String retStr = "";//return string for emotions
         
         if (hand.hasCard(VALUE GOES HERE)) { //if the computer does have a card with
             hand.remove(x);
         }
         return retStr;
     }
-                  
+    */            
     //public accessor to hand
     public Hand getHand() {
         return hand;

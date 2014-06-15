@@ -5,14 +5,14 @@ public class CardStack{
 
     private Stack<Card> stack;
 
-
-    public CardStack()
+    public CardStack(){
 	stack = new Stack<Card>();
     }
 
     public Card pop(){
 	return stack.pop();
     }
+
     public int peek(){
 	return stack.peek().getIntVal();
     }
