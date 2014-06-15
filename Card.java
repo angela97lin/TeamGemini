@@ -110,7 +110,11 @@ public class Card extends Component{
     public void changeFace(){
 	faceup = !faceup;
     }
-
+    
+    public void falseFace(){
+	faceup = false;
+    }
+    
     public Dimension getPreferredSize() {
         if (img == null) {
              return new Dimension(50,100);

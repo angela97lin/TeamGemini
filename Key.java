@@ -34,7 +34,14 @@ public class Key implements MouseMotionListener, MouseListener{
 	    if(e.getX()>=0&&e.getX()<=80&&e.getY()>=GamePlay.myHeight/2-40&&
 	       e.getY()<=GamePlay.myHeight/2+40){
 		GamePlay.state = 0;
-	    }else{
+	    }
+	    else if(e.getX()>=200&&e.getX()<=280&&e.getY()>=355&&e.getY()<=395){
+		GamePlay.play.go();
+	    }
+	    else if(e.getX()>=200&&e.getX()<=280&&e.getY()>=405&&e.getY()<=445){
+		GamePlay.play.bs();
+	    }
+	    else{
 		
 		GamePlay.play.checkAll(e.getX(),e.getY());
 	    }
@@ -61,6 +68,9 @@ public class Key implements MouseMotionListener, MouseListener{
 		GamePlay.state = 2;
 	    }
 	}
+	System.out.println(e.getX());
+	System.out.println(e.getY());
+	GamePlay.stuff = 1;
 	
     }
 

@@ -17,6 +17,7 @@ public class GamePlay extends JPanel implements Runnable{
     public static int ID;
     public static Point p;
     public static Menu menu;
+    public static int stuff;
 
     public GamePlay(Run run){
 	Run.driver.addMouseListener(new Key());
@@ -31,6 +32,7 @@ public class GamePlay extends JPanel implements Runnable{
 	isFirst = true;
 	state = 0;
 	ID = 1;
+	stuff = 0;
     }
 
     public void paintComponent(Graphics g){
@@ -41,45 +43,45 @@ public class GamePlay extends JPanel implements Runnable{
 	    
 	    isFirst = false;
 	}
+	g.setColor(new Color(60,60,60));
+	g.fillRect(0,0,myWidth,myHeight);
 	g.drawImage(myImage,0,0,getWidth(),getHeight(),this);
 	if(ID == 1){
 	    g.drawImage(image,919,myHeight/2-60,null);
-	}
-	if(ID == 2){
+	} if(ID == 2){
 	    g.drawImage(image2,919,myHeight/2-60,null);
 	}
 	if(state == 0){
 	    menu.draw(g);
 	}
 	
-	if (state == 1){
+	else if (state == 1){
 	    play.draw(g);
 	}
-	if (state == 2){
+	else if (state == 2){
 	    setting.draw(g);
 	}
 	
     }
 
     public void define(){
-	play = new Play();
 	setting = new Setting();
 	p = new Point(0,0);
 	menu = new Menu();
-	Music m = new Music();
-	m.play();
     }
     
     public void run(){
 	while(true){
-	    if(!isFirst){
-		
+	    if(stuff != 0){
+		repaint();
+		stuff = 0;
 	    }
-	    repaint();
+
+	}
+
 	    /*try{
 		thread.sleep(1);//slows down running
 		}catch(Exception e){}*/
-	}
     }
 
 

@@ -1,5 +1,8 @@
 import java.util.*;
 import java.io.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.*;
 
 public class CardStack{
 
@@ -24,7 +27,13 @@ public class CardStack{
 	//	expectedVal ++; //issue if we add more than one card at a time 
 	c.setXCor(GamePlay.myWidth/2-37);
 	c.setYCor(GamePlay.myHeight/2-60);
+	c.falseFace();
     }
 
+    public void draw(Graphics g){
+	if(stack.size()>0){
+	    stack.peek().draw(g);
+	}
+    }
 
 }

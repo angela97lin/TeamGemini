@@ -65,15 +65,19 @@ public class Play{
 	g.setColor(new Color(255,255,255));
 	g.setFont(new Font("Courier New",Font.BOLD,19));
 	g.drawString("Menu",20,GamePlay.myHeight/2+5);
-	
-	
+	g.setColor(new Color(0,0,0));
+	g.fillRect(200,330,80,40);
+	g.fillRect(200,380,80,40);
+	g.setColor(new Color(255,255,255));
+	g.drawString("Go!",225,356);
+	g.drawString("BS!",225,406);
+	cs.draw(g);
 	//int cSpacing = c.getHand().size()*5;
 	//int pSpacing = p.getHand().size()*5;
 	if (p.getHand().size() > 13){
-
 	    for (int i = 0; i < 13;i++){
 		p.getHand().getCard(i).setXCor((GamePlay.myWidth/2
-						-((c.getHand().size()*75)/2))
+						-((p.getHand().size()*75)/2))
 					       +i*75);
 		if(p.getHand().getCard(i).selected()){
 		    p.getHand().getCard(i).setYCor(450);
@@ -84,7 +88,7 @@ public class Play{
 	    }
 	    for (int i = 13; i < p.getHand().size();i++){
 		p.getHand().getCard(i).setXCor((GamePlay.myWidth/2
-					       -((c.getHand().size()*75)/2))
+					       -((p.getHand().size()*75)/2))
 					       +(i-13)*75);
 		if(p.getHand().getCard(i).selected()){
 		    p.getHand().getCard(i).setYCor(570);
@@ -97,7 +101,7 @@ public class Play{
 	else { 	    
 	    for (int i = 0; i < p.getHand().size();i++){
 		p.getHand().getCard(i).setXCor((GamePlay.myWidth/2
-					       -((c.getHand().size()*75)/2))
+					       -((p.getHand().size()*75)/2))
 					       +i*75);
 		if(p.getHand().getCard(i).selected()){
 		    p.getHand().getCard(i).setYCor(450);
