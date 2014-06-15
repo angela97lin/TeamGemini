@@ -43,10 +43,9 @@ public class Play{
 	}
     }
 	
-    
-
-
-
+    public Player getPlayer(){
+	return p;
+    }
 
     public void draw(Graphics g){
 	//int cSpacing = c.getHand().size()*5;
