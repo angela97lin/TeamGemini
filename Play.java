@@ -50,7 +50,7 @@ public class Play{
     public void bs(){
 	int cardNum = 1;
 	while(placed > 0){
-	    cs.pop().reveal(cardNum);
+	    cs.pop(cardNum);
 	    placed --;
 	    cardNum++;
 	}
