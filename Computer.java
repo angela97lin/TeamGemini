@@ -27,21 +27,23 @@ public class Computer {
 	lvl = 1;
 	hand = new Hand();
 
+	goodEmotions = new ArrayList<String>();
+	badEmotions = new ArrayList<String>();
 	goodEmotions.add("The Computer smiled.");
 	goodEmotions.add("The Computer grinned.");
 	goodEmotions.add("The Computer has a blank face.");
 	goodEmotions.add("The Computer yawned.");
-	goodEmotions.add("");
-	goodEmotions.add("");
-	goodEmotions.add("");
+	goodEmotions.add("The Computer smirked.");
+	goodEmotions.add("The Computer cackled.");
+	goodEmotions.add("The Computer whistled.");
 
-	badEmotions.add("");
-	badEmotions.add("");
-	badEmotions.add("");
-	badEmotions.add("");
-	badEmotions.add("");
-	badEmotions.add("");
-	badEmotions.add("");
+	badEmotions.add("The Computer's hands are shaking!");
+	badEmotions.add("The Computer is looking down.");
+	badEmotions.add("The Computer moaned.");
+	badEmotions.add("The Computer is spacing out.");
+	badEmotions.add("The Computer placed the cards down nervously.");
+	badEmotions.add("The Computer gave a soft whimper.");
+	badEmotions.add("The Computer cursed.");
     }
     
     public Computer(ArrayList<Card> cards, int lvl){
@@ -69,18 +71,18 @@ public class Computer {
      * expects next. This is to allow computer to check to see if it has that
      * value.
 
-     */
-    /*
+     
+   
     public String makeMove() {
-	//	int nextVal = Play.cs.peek();
-        String retStr = "";//return string for emotions
-        
+       	int nextVal = Play.cs.peek();
+        String retStr = "";//return string for emotions based on level and 
         if (hand.hasCard(VALUE GOES HERE)) { //if the computer does have a card with
             hand.remove(x);
         }
         return retStr;
     }
-    */            
+    */
+              
     //public accessor to hand
     public Hand getHand() {
         return hand;
