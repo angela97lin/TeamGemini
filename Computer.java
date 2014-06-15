@@ -42,13 +42,14 @@ public class Computer {
 	badEmotions.add("The Computer moaned.");
 	badEmotions.add("The Computer is spacing out.");
 	badEmotions.add("The Computer placed the cards down nervously.");
-	badEmotions.add("The Computer gave a soft whimper.");
+	badEmotions.add("The Computer giggled nervously.");
 	badEmotions.add("The Computer cursed.");
     }
     
     public Computer(ArrayList<Card> cards, int lvl){
 	hand = new Hand(cards);
         this.lvl = lvl;
+	//is this necessary
 	//sets stats based on lvl of the computer
         if(lvl == 1) {
             trickery = (int)(Math.random() * 6) + 1;
@@ -71,18 +72,56 @@ public class Computer {
      * expects next. This is to allow computer to check to see if it has that
      * value.
 
-     
+     */
    
+    //might change to void and instead simply have a popup box or label...
     public String makeMove() {
-       	int nextVal = Play.cs.peek();
+	Random r = new Random();
+       	int nextVal = Play.cs.peek()+1; //represents the value that
         String retStr = "";//return string for emotions based on level and 
-        if (hand.hasCard(VALUE GOES HERE)) { //if the computer does have a card with
-            hand.remove(x);
-        }
+	int temp = r.nextInt(goodEmotions.size());
+	int temp2 = r.nextInt(badEmotions.size());
+	int temp3 = r.nextInt(4); //0,1,2,3 --> 25 percent chance of bluff
+
+        if (hand.hasCard(Play.cs.expectedVal)) { //if the computer does have a card with
+	    while (hand.hasCard(Play.cs.expectedVal)) {
+		hand.remove(Play.cs.expectedVal);
+	    }
+	    if (lvl == 1){
+		retStr = goodEmotions.get(temp);
+	    }
+	    if (lvl == 2){
+		if (temp3 == 0){ //bluff
+		    retStr = badEmotions.get(temp2);
+		}
+		else {
+		    retStr = goodEmotions.get(temp);
+		}
+	    }
+	    if (lvl == 3){ //amazing bluff --> 50% chance
+		if (temp3 < 2){
+		    retStr = badEmotions.get(temp2);
+		}
+		else {
+		    retStr = goodEmotions.get(temp);
+		}
+	    }
+	}
+	else { //Computer does not have appropriate card
+
+	}
+
+	//UPDATING NEXT EXPECTED VALUE FOR CARD STACK
+	if (Play.cs.expectedVal != 13)
+	    Play.cs.expectedVal++; //after move, next expected val increases or loops around
+	else 
+	    Play.cs.expectedVal = 1;
+
         return retStr;
     }
-    */
-              
+	
+    
+           
     //public accessor to hand
     public Hand getHand() {
         return hand;

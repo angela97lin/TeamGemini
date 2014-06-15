@@ -81,6 +81,8 @@ public class Hand {
 	return hand.get(pos);
     }
 
+    
+
    public String toString(){
 	String retS = "(";
 	for (int i = 0; i<hand.size(); i++){
