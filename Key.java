@@ -31,19 +31,8 @@ public class Key implements MouseMotionListener, MouseListener{
 	//then set profPic to the image that is currently in the boundaries
 	if(GamePlay.state == 1){//game mode
 	    //if on a specific card
-	    for(int i = 0; i < GamePlay.play.getPlayer().getHand().size();i++){
-		if(GamePlay.play.getPlayer().getHand()
-		   .getCard(i).isBetween(e.getX(),e.getY())){
-		       if(!(GamePlay.play.getPlayer().getHand()
-			    .getCard(i).selected())){
-			   GamePlay.play.getPlayer().getHand().getCard(i).
-			       select();
-		       }else{
-			   GamePlay.play.getPlayer().getHand().getCard(i)
-			       .unselect();
-		       }
-		}
-	    }
+	    GamePlay.play.checkAll(e.getX(),e.getY());
+	    
 	}
 	if(GamePlay.state == 2){//settings page
 

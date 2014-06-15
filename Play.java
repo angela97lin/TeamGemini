@@ -35,6 +35,19 @@ public class Play{
 	}
     }
     
+    public void checkAll(float x, float y){
+	for (int i =0; i < p.getHand().size();i++){
+	    if(p.getHand().getCard(i).isBetween(x,y)){
+		if(!(p.getHand().getCard(i).selected())){
+		    p.getHand().getCard(i).select();
+		}else{
+		    p.getHand().getCard(i).unselect();
+		}
+		System.out.println(p.getHand().getCard(i).getYCor());
+	    }
+	}
+    }
+
     public void bs(){
 	int cardNum = 1;
 	while(placed > 0){
