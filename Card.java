@@ -135,6 +135,15 @@ public class Card extends Component{
     public void move(){
     }
 
+    public boolean isBetween(float x1, float y1, float x2, float y2, float objeX, float objeY) {
+	if ((x1 <= objeX && x2 >=objeX) || (x1 >=objeX && x2<=objeX )) {
+	    if ((y1 <= objeY && y2 >=objeY) || (y2 <= objeY && y1 >=objeY))
+		return true;
+	}
+	else {
+	    return false;
+	}
+}
     public static void main(String[] args){
 	JFrame f = new JFrame( "Load Card Sample");
 	

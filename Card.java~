@@ -21,6 +21,7 @@ public class Card extends Component{
     BufferedImage img,bck;
     private boolean faceup;
     private int mx,my,px,py;
+    private boolean select;
 
     //CONSTRUCTOR - sets the intValue and suit
     public Card(int x, String s) {
@@ -56,6 +57,7 @@ public class Card extends Component{
 	py = 0;
 	mx = px;
 	my = py;
+	select = false;
     }
 
     //public accessor to intValue
@@ -76,6 +78,10 @@ public class Card extends Component{
         return (other.getIntVal() == getIntVal()) && (other.getSuit().equals(getSuit()));
     }
 
+    public boolean selected(){
+	return select;
+    }
+    
     public String toString(){
         String retS = "";
         retS = intValue + ", " + suit;
@@ -85,11 +91,11 @@ public class Card extends Component{
     // public void draw(Graphics g){
     // }
     
-    public void draw(Graphics g,int x, int y) {
+    public void draw(Graphics g) {
 	if(faceup){
-	    g.drawImage(img, x, y, null);
+	    g.drawImage(img, px, py, null);
 	}else{
-	    g.drawImage(bck,x,y,null);
+	    g.drawImage(bck,px,py,null);
 	}
     }
 
@@ -105,12 +111,17 @@ public class Card extends Component{
        }
     }
 
-    public void setX(int val){
+    public void setXCor(int val){
 	px = val;
     }
 
-    public void setY(int val){
+    public void setYCor(int val){
 	py = val;
+    }
+
+    public void reveal(int num){
+	changeFace();
+	setXCor((GamePlay.myWidth/2+37)+num*74);
     }
 
     public int getXCor(){
