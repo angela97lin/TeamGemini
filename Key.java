@@ -18,13 +18,13 @@ public class Key implements MouseMotionListener, MouseListener{
 
 
     public void mouseReleased(MouseEvent e){
-
+	
     }
 
     public void mouseDragged(MouseEvent e){
 
     }
-    public void mouseClicked(MouseEvent e){
+    public void mouseClicked(MouseEvent e){	
 	GamePlay.p = new Point(e.getPoint());
 	//I think this goes here..
 	//if the state == the settings one
@@ -37,8 +37,13 @@ public class Key implements MouseMotionListener, MouseListener{
 	if(GamePlay.state == 2){//settings page
 
 	}
-	if(GamePlay.state == 3){
-
+	if(GamePlay.state == 0){
+	    if (e.getX()<=750&&e.getX()>=350&&e.getY()<=325&&e.getY()>=225){
+		GamePlay.state = 1;
+	    } 
+	    if (e.getX()<=750&&e.getX()>=350&&e.getY()<525&&e.getY()>=425){
+		GamePlay.state = 2;
+	    }
 	}
 	
     }
