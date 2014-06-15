@@ -14,13 +14,12 @@ public class CardStack{
 	expectedVal = 1;
     }
 
-    public Card pop(int n){
-	stack.peek().reveal(n);
+    public Card pop(){
 	return stack.pop();
     }
 
     public int peek(){
-	return stack.peek().getIntVal();
+	return stack.peek().getIntVal();//returns integer value of card
     }
 
     public void add(Card c){
@@ -37,15 +36,17 @@ public class CardStack{
 	}
     }
 
-<<<<<<< HEAD
    
     public static void main(String[] args){
 	CardStack c = new CardStack();
 	Card c1 = new Card(2,"Clover");
+	Card c2 = new Card(3,"Diamond");
 	c.add(c1);
-	System.out.println(c.pop(1));
+	c.add(c2);
+	System.out.println(c.pop());
+	System.out.println(c.peek());
+	System.out.println(c.pop());
+	System.out.println(c.peek());//should be error
     }
 
-=======
->>>>>>> parent of 356764a... gotta make the same
 }
