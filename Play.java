@@ -52,6 +52,7 @@ public class Play{
 	while(placed > 0){
 	    cs.pop().reveal(cardNum);
 	    placed --;
+	    cardNum++;
 	}
     }
 	

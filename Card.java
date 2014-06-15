@@ -133,7 +133,7 @@ public class Card extends Component{
 
     public void reveal(int num){
 	changeFace();
-	setXCor((GamePlay.myWidth/2+37)+num*74);
+	setXCor((GamePlay.myWidth/2+37)+num*75);
     }
 
     public int getXCor(){
@@ -149,7 +149,7 @@ public class Card extends Component{
 
     public boolean isBetween(float objeX, float objeY) {
 	if ((px<= objeX && px+70>=objeX)) {
-	    if ((py<= objeY && py+100 >=objeY)){
+	    if ((py+25<= objeY && py+125 >=objeY)){
 		return true;
 	    }
 	}return false;
