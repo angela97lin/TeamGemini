@@ -75,6 +75,7 @@ public class Play{
 	    while(csPlaced > 0){
 		cs.pop(g,cardNum);//forgot-cardNum =?
 		csPlaced --;
+		cardNum++;
 	    }
 	    lie = false;
 	}
@@ -82,6 +83,7 @@ public class Play{
 	    while(placed > 0){
 		cs.pop(g,cardNum);
 		placed--;
+		cardNum++;
 	    }
 	}
     }

@@ -111,17 +111,17 @@ public class Computer {
 	    Play.lie = true;
 	}
 	else { //Computer does not have appropriate card
-	    for (int i = 0; i<temp3; i++){
-		if (lvl == 1 || lvl == 2){//random removal
-		    int randomCard = r.nextInt(hand.size());
-		    Play.cs.add(hand.remove(hand.get(randomCard)));
-		    Play.csPlaced ++;
-		}
-		else { //lvl 3: remove lowest card
-		    Play.cs.add(hand.remove());
-		    Play.csPlaced++;
-		}
-	    }
+	    //for (int i = 0; i<temp3; i++){
+	    //	if (lvl == 1 || lvl == 2){//random removal
+	    //	    int randomCard = r.nextInt(hand.size());
+	    //	    Play.cs.add(hand.remove(hand.get(randomCard)));
+	    //	    Play.csPlaced ++;
+	    //	}
+	    //	else { //lvl 3: remove lowest card
+	    Play.cs.add(hand.remove());
+	    Play.csPlaced++;
+		    //	}
+	    //}
 	    Play.turn = true;
 	    Play.lie = true;
 	}

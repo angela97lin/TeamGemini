@@ -22,6 +22,7 @@ public class Card extends Component{
     private boolean faceup;
     private int mx,my,px,py;
     private boolean select;
+    private boolean go;
 
     //CONSTRUCTOR - sets the intValue and suit
     public Card(int x, String s) {
@@ -58,6 +59,7 @@ public class Card extends Component{
 	mx = px;
 	my = py;
 	select = false;
+	go= false;
     }
 
     //public accessor to intValue
@@ -135,10 +137,11 @@ public class Card extends Component{
 	py = val;
     }
 
-    public void reveal(Graphics g, int num){
+    public void reveal(Graphics g, int num,boolean who){
 	trueFace();
 	setXCor((GamePlay.myWidth/2+37)+num*75);
 	draw(g);
+	go = who;
     }
 
     public int getXCor(){
