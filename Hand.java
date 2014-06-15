@@ -33,6 +33,7 @@ public class Hand {
         }
         return false;
     }
+
     
     //Will check if a card with any suit is present in the hand that has
     //an int value of x
@@ -51,18 +52,19 @@ public class Hand {
 	Play.cs.add(c);
         return c;
     }
-
+    //removes first value
+    public Card remove(){
+	return hand.remove(0);
+    }
 
     public Card remove(int x) {
-        int pos = 0;
         Card retCard = null;
-        for(Card c: hand) {
-            if (hand.get(pos).getIntVal() == x) {
-                retCard = hand.get(pos);
-                hand.remove(pos);
+        for (int i = 0; i<hand.size(); i++) {
+            if (hand.get(i).getIntVal() == x) {
+                retCard = hand.get(i);
+                hand.remove(i);
                 break;
-            } else
-                pos++;
+            }
         }
 	if (retCard != null){
 	    Play.cs.add(retCard);
@@ -70,6 +72,16 @@ public class Hand {
         return retCard;
     }
     
+    public Card get(int x){
+	Card retCard = null;
+        for (int i = 0; i<hand.size(); i++) {
+            if (hand.get(i).getIntVal() == x) {
+                retCard = hand.get(i);
+            }
+	}
+        return retCard;
+    }
+
     public void add(Card c){
 	hand.add(c);
 	sort();
