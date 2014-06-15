@@ -11,17 +11,12 @@ import java.awt.image.*;
 
 public class Setting {  
 
-    BufferedImage image, image2;
     public Setting(){
-	try {
-	    image = ImageIO.read(new File("girl.jpeg"));
-	    image2 = ImageIO.read(new File("mafia.png"));
-	} catch (IOException e) {}
     }
 
-    public void draw(Graphics g, int x, int y){
-	g.drawImage(image, x, y, null);
-	g.drawImage(image2, x, y, null);
+    public void draw(Graphics g){
+	g.drawImage(GamePlay.image, GamePlay.myWidth/2 - 81, 230, null);
+	g.drawImage(GamePlay.image2, GamePlay.myWidth/2, 230, null);
 
     }
 	
