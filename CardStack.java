@@ -14,7 +14,8 @@ public class CardStack{
 	expectedVal = 1;
     }
 
-    public Card pop(){
+    public Card pop(int n){
+	stack.peek().reveal(n);
 	return stack.pop();
     }
 
@@ -41,7 +42,7 @@ public class CardStack{
 	CardStack c = new CardStack();
 	Card c1 = new Card(2,"Clover");
 	c.add(c1);
-	System.out.println(c.pop());
+	System.out.println(c.pop(1));
     }
 
 }
