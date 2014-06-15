@@ -66,6 +66,8 @@ public class GamePlay extends JPanel implements Runnable{
 	setting = new Setting();
 	p = new Point(0,0);
 	menu = new Menu();
+	Music m = new Music();
+	m.play();
     }
     
     public void run(){

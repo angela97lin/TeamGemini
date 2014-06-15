@@ -16,6 +16,7 @@ public class GamePlay extends JPanel implements Runnable{
     public static Setting setting;
     public static int ID;
     public static Point p;
+    public static Menu menu;
 
     public GamePlay(Run run){
 	Run.driver.addMouseListener(new Key());
@@ -28,7 +29,7 @@ public class GamePlay extends JPanel implements Runnable{
 	    image2 = ImageIO.read(new File("mafia.png"));
 	}catch(Exception e){}
 	isFirst = true;
-	state = 1;
+	state = 0;
 	ID = 1;
     }
 
@@ -47,6 +48,10 @@ public class GamePlay extends JPanel implements Runnable{
 	if(ID == 2){
 	    g.drawImage(image2,919,myHeight/2-60,null);
 	}
+	if(state == 0){
+	    menu.draw(g);
+	}
+	
 	if (state == 1){
 	    play.draw(g);
 	}
@@ -59,6 +64,8 @@ public class GamePlay extends JPanel implements Runnable{
     public void define(){
 	play = new Play();
 	setting = new Setting();
+	p = new Point(0,0);
+	menu = new Menu();
     }
     
     public void run(){
@@ -67,9 +74,9 @@ public class GamePlay extends JPanel implements Runnable{
 		
 	    }
 	    repaint();
-	    try{
+	    /*try{
 		thread.sleep(1);//slows down running
-	    }catch(Exception e){}
+		}catch(Exception e){}*/
 	}
     }
 
