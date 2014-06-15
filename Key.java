@@ -58,12 +58,12 @@ public class Key implements MouseMotionListener, MouseListener{
 		GamePlay.ID=2;
 	    }
 	}
-	if(GamePlay.state == 0){
-	    if (e.getX()<=750&&e.getX()>=350&&e.getY()<=325&&e.getY()>=225){
+	if(GamePlay.state == 0){//menu
+	    if (e.getX()<=352&&e.getX()>=750&&e.getY()<=350&&e.getY()>=252){
 		GamePlay.play = new Play();
 		GamePlay.state = 1;
 	    } 
-	    if (e.getX()<=750&&e.getX()>=350&&e.getY()<525&&e.getY()>=425){
+	    if (e.getX()<=750&&e.getX()>=350&&e.getY()<550&&e.getY()>=450){
 		GamePlay.state = 2;
 	    }
 	}
