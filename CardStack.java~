@@ -36,4 +36,15 @@ public class CardStack{
 	}
     }
 
+   
+    public static void main(String[] args){
+	CardStack c = new CardStack();
+	Card c1 = new Card(2,"Clover");
+	Card c2 = new Card(3,"Clover");
+	c.add(c1);
+	c.add(c2);
+	System.out.println(c.pop());
+	System.out.println(c.peek());
+    }
+
 }
