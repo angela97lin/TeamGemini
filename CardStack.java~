@@ -5,14 +5,18 @@ public class CardStack{
 
     private Stack<Card> stack;
 
+<<<<<<< HEAD
+=======
 
-    public CardStack()
+>>>>>>> origin/master
+    public CardStack(){
 	stack = new Stack<Card>();
     }
 
     public Card pop(){
 	return stack.pop();
     }
+
     public int peek(){
 	return stack.peek().getIntVal();
     }
