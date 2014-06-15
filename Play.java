@@ -60,6 +60,13 @@ public class Play{
     }
 
     public void draw(Graphics g){
+	g.setColor(new Color(168,168,230,63));
+	g.fillRect(0,GamePlay.myHeight/2-40,80,80);
+	g.setColor(new Color(255,255,255));
+	g.setFont(new Font("Courier New",Font.BOLD,19));
+	g.drawString("Menu",20,GamePlay.myHeight/2+5);
+	
+	
 	//int cSpacing = c.getHand().size()*5;
 	//int pSpacing = p.getHand().size()*5;
 	if (p.getHand().size() > 13){
