@@ -74,18 +74,18 @@ public class GamePlay extends JPanel implements Runnable{
     
     public void run(){
 	while(true){
-	    if(stuff != 0){
+	    if (stuff == 1){
 		repaint();
 		stuff = 0;
 	    }
 
-	}
+	    
 
 	    /*try{
 		thread.sleep(1);//slows down running
 		}catch(Exception e){}*/
+	}
     }
-
 
 
 

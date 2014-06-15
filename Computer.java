@@ -76,8 +76,9 @@ public class Computer {
    
     //might change to void and instead simply have a popup box or label...
     public String makeMove() {
+	Play.csPlaced = 0;
 	Random r = new Random();
-       	int nextVal = Play.cs.peek()+1; //represents the value that
+       	int nextVal = Play.cs.expectedVal; //represents the value that
         String retStr = "";//return string for emotions based on level and 
 	int temp = r.nextInt(goodEmotions.size());
 	int temp2 = r.nextInt(badEmotions.size());
@@ -85,6 +86,7 @@ public class Computer {
         if (hand.hasCard(Play.cs.expectedVal)) { //if the computer does have a card with
 	    while (hand.hasCard(Play.cs.expectedVal)) {
 		Play.cs.add(hand.remove(Play.cs.expectedVal));
+		Play.csPlaced ++;
 	    }
 	    if (lvl == 1){
 		retStr = goodEmotions.get(temp);
@@ -105,17 +107,23 @@ public class Computer {
 		    retStr = goodEmotions.get(temp);
 		}
 	    }
+	    Play.turn = true;
+	    Play.lie = true;
 	}
 	else { //Computer does not have appropriate card
 	    for (int i = 0; i<temp3; i++){
 		if (lvl == 1 || lvl == 2){//random removal
 		    int randomCard = r.nextInt(hand.size());
 		    Play.cs.add(hand.remove(hand.get(randomCard)));
+		    Play.csPlaced ++;
 		}
 		else { //lvl 3: remove lowest card
 		    Play.cs.add(hand.remove());
+		    Play.csPlaced++;
 		}
 	    }
+	    Play.turn = true;
+	    Play.lie = true;
 	}
 
 	//UPDATING NEXT EXPECTED VALUE FOR CARD STACK AFTER COMPUTER FINISHES MOVES

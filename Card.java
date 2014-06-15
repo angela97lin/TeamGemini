@@ -114,6 +114,10 @@ public class Card extends Component{
     public void falseFace(){
 	faceup = false;
     }
+
+    public void trueFace(){
+	faceup = true;
+    }
     
     public Dimension getPreferredSize() {
         if (img == null) {
@@ -131,9 +135,10 @@ public class Card extends Component{
 	py = val;
     }
 
-    public void reveal(int num){
-	changeFace();
+    public void reveal(Graphics g, int num){
+	trueFace();
 	setXCor((GamePlay.myWidth/2+37)+num*75);
+	draw(g);
     }
 
     public int getXCor(){

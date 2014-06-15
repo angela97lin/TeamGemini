@@ -84,7 +84,7 @@ public class Computer {
 	int temp3 = r.nextInt(4); //0,1,2,3 --> 25 percent chance of bluff
         if (hand.hasCard(Play.cs.expectedVal)) { //if the computer does have a card with
 	    while (hand.hasCard(Play.cs.expectedVal)) {
-		hand.remove(Play.cs.expectedVal);
+		Play.cs.add(hand.remove(Play.cs.expectedVal));
 	    }
 	    if (lvl == 1){
 		retStr = goodEmotions.get(temp);
@@ -107,7 +107,15 @@ public class Computer {
 	    }
 	}
 	else { //Computer does not have appropriate card
-	   
+	    for (int i = 0; i<temp3; i++){
+		if (lvl == 1 || lvl == 2){//random removal
+		    int randomCard = r.nextInt(hand.size());
+		    Play.cs.add(hand.remove(hand.get(randomCard)));
+		}
+		else { //lvl 3: remove lowest card
+		    Play.cs.add(hand.remove());
+		}
+	    }
 	}
 
 	//UPDATING NEXT EXPECTED VALUE FOR CARD STACK AFTER COMPUTER FINISHES MOVES

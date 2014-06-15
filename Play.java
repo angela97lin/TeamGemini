@@ -11,6 +11,10 @@ public class Play{
     public static Computer c;
     public static CardStack cs;
     public static int placed;
+    public static int csPlaced;
+    public static int count;
+    public static boolean turn;
+    public static boolean lie;
 
     public Play(){
 	define();
@@ -23,36 +27,62 @@ public class Play{
 	cs = new CardStack();
 	placed = 0;
 	deck.deal(c,p);
+	count = 0;
+	turn = true;
+	lie = false;
     }
 
     public void go(){
 	placed = 0;
-	for (int i = 0; i < p.getHand().size();i++){
+	for (int i = 0; i < p.getHand().size();){
 	    if (p.getHand().getCard(i).selected()){
 		cs.add(p.getHand().remove(p.getHand().getCard(i)));
 		placed ++;
+	    }else{
+		i++;
+	    }
+	}
+	cs.expectedVal++;
+	if(cs.expectedVal > 13){
+	    cs.expectedVal = 1;
+	}
+	turn = false;
+	lie = false;
+    }
+
+    public void deselect(){
+	for (int i = 0; i < p.getHand().size();i++){
+	    if(p.getHand().getCard(i).selected()){
+		p.getHand().getCard(i).unselect();
 	    }
 	}
     }
     
     public void checkAll(float x, float y){
 	for (int i =0; i < p.getHand().size();i++){
-	    if(p.getHand().getCard(i).isBetween(x,y)){
-		if(!(p.getHand().getCard(i).selected())){
-		    p.getHand().getCard(i).select();
-		}else{
-		    p.getHand().getCard(i).unselect();
-		}
+	    if(p.getHand().getCard(i).isBetween(x,y)&&
+	       !(p.getHand().getCard(i).selected())){
+		p.getHand().getCard(i).select();
+		//System.out.println(p.getHand().getCard(i).getYCor());
+		GamePlay.stuff = 1;
 	    }
 	}
     }
 
-    public void bs(){
+    public void bs(Graphics g){
 	int cardNum = 1;
-	while(placed > 0){
-	    cs.pop(cardNum);//forgot-cardNum =?
-	    placed --;
-	    cardNum++;
+	if(turn){
+	    while(csPlaced > 0){
+		cs.pop(g,cardNum);//forgot-cardNum =?
+		csPlaced --;
+	    }
+	    lie = false;
+	}
+	else{
+	    while(placed > 0){
+		cs.pop(g,cardNum);
+		placed--;
+	    }
 	}
     }
 	
@@ -69,10 +99,26 @@ public class Play{
 	g.setColor(new Color(0,0,0));
 	g.fillRect(200,330,80,40);
 	g.fillRect(200,380,80,40);
+	g.fillRect(200,280,90,40);
 	g.setColor(new Color(255,255,255));
 	g.drawString("Go!",225,356);
 	g.drawString("BS!",225,406);
-	cs.draw(g);
+	g.drawString("Unselect",200,306);
+	if(!turn){
+	    c.makeMove();
+	}
+	if(count != 0){
+	    bs(g);
+	    if(turn){
+		if(csPlaced <=0){
+		    count = 0;
+		}
+	    }else{
+		if(placed<=0){
+		    count=0;
+		}
+	    }
+	}
 	//int cSpacing = c.getHand().size()*5;
 	//int pSpacing = p.getHand().size()*5;
 	if (p.getHand().size() > 13){
@@ -143,6 +189,6 @@ public class Play{
 		c.getHand().getCard(i).draw(g);
 	    }
 	}
+	cs.draw(g);
     }
-
 }

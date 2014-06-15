@@ -110,7 +110,11 @@ public class Card extends Component{
     public void changeFace(){
 	faceup = !faceup;
     }
-
+    
+    public void falseFace(){
+	faceup = false;
+    }
+    
     public Dimension getPreferredSize() {
         if (img == null) {
              return new Dimension(50,100);
@@ -129,7 +133,7 @@ public class Card extends Component{
 
     public void reveal(int num){
 	changeFace();
-	setXCor((GamePlay.myWidth/2+37)+num*74);
+	setXCor((GamePlay.myWidth/2+37)+num*75);
     }
 
     public int getXCor(){
@@ -144,8 +148,8 @@ public class Card extends Component{
     }
 
     public boolean isBetween(float objeX, float objeY) {
-	if ((px+70 <= objeX && px >=objeX)) {
-	    if ((py <= objeY && py >=objeY)){
+	if ((px<= objeX && px+70>=objeX)) {
+	    if ((py+25<= objeY && py+125 >=objeY)){
 		return true;
 	    }
 	}return false;
