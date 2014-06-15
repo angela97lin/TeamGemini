@@ -82,6 +82,14 @@ public class Card extends Component{
 	return select;
     }
     
+    public void select(){
+	select =true;
+    }
+    
+    public void unselect(){
+	select = false;
+    }
+
     public String toString(){
         String retS = "";
         retS = intValue + ", " + suit;
@@ -135,6 +143,13 @@ public class Card extends Component{
     public void move(){
     }
 
+    public boolean isBetween(float objeX, float objeY) {
+	if ((px+70 <= objeX && px >=objeX)) {
+	    if ((py <= objeY && py >=objeY)){
+		return true;
+	    }
+	}return false;
+    }
     public static void main(String[] args){
 	JFrame f = new JFrame( "Load Card Sample");
 	

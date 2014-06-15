@@ -5,6 +5,10 @@ public class CardStack{
 
     private Stack<Card> stack;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     public CardStack(){
 	stack = new Stack<Card>();
     }
