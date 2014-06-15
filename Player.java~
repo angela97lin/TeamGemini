@@ -20,6 +20,17 @@ public class Player {
 	myHand = new Hand();
     }
 
+    //tentatively String
+    public String makeMove(){
+	String retStr = "";
+	//UPDATING NEXT EXPECTED VALUE FOR CARD STACK AFTER PLAYER FINISHES MOVES
+	if (Play.cs.expectedVal != 13)
+	    Play.cs.expectedVal++; //after move, next expected val increases or loops around
+	else 
+	    Play.cs.expectedVal = 1;
+
+	return retStr;
+    }
 
     //ACCESSOR METHOD to the player's hand
     public Hand getHand(){

@@ -8,17 +8,47 @@ public class CardStack{
 
     private Stack<Card> stack;
     public static int expectedVal;
+    private Stack<Card> lol;
+    public static boolean who;
 
     public CardStack(){
 	stack = new Stack<Card>();
 	expectedVal = 1;
+	lol = new Stack<Card>();
     }
 
-    public Card pop(Graphics g, int val){
-	stack.peek().reveal(g,val);
-	return stack.pop();
+    public void pop(Graphics g,int val){
+	stack.peek().reveal(g,val,expectedVal);
+	if (!stack.peek().getGo()){
+	    who = false;
+	}
+	lol.push(stack.pop());
+	
     }
 
+    public void cardCollection(Hand l, Hand g){
+	while(lol.size()>0){
+	    if(!who){
+		l.add(lol.pop());
+	    }
+	    else{
+		g.add(lol.pop());
+	    }
+	}
+	while(stack.size()>0){
+	    if(!who){
+		l.add(stack.pop());
+	    }
+	    else{
+		g.add(stack.pop());
+	    }
+	}
+	Play.p.showHand();
+	Play.c.hideFace();
+	who = true;
+	
+    }
+    
     public int peek(){
 	return stack.peek().getIntVal();//returns integer value of card
     }

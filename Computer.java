@@ -135,7 +135,11 @@ public class Computer {
         return retStr;
     }
 	
-    
+    public void hideFace(){
+	for (int i = 0; i < hand.size(); i++){
+	    hand.getCard(i).falseFace();
+	}
+    }
            
     //public accessor to hand
     public Hand getHand() {

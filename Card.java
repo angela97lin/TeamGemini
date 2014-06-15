@@ -133,15 +133,21 @@ public class Card extends Component{
 	px = val;
     }
 
+    public boolean getGo(){
+	return go;
+    }
+
     public void setYCor(int val){
 	py = val;
     }
 
-    public void reveal(Graphics g, int num,boolean who){
+    public void reveal(Graphics g,int num,int check){
 	trueFace();
 	setXCor((GamePlay.myWidth/2+37)+num*75);
 	draw(g);
-	go = who;
+	if(check == Play.cs.expectedVal){
+	    go = true;
+	}
     }
 
     public int getXCor(){

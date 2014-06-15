@@ -78,6 +78,7 @@ public class Play{
 		cardNum++;
 	    }
 	    lie = false;
+	    cs.cardCollection(p.getHand(),c.getHand());
 	}
 	else{
 	    while(placed > 0){
@@ -85,7 +86,9 @@ public class Play{
 		placed--;
 		cardNum++;
 	    }
+	    cs.cardCollection(c.getHand(),p.getHand());
 	}
+
     }
 	
     public Player getPlayer(){
@@ -126,7 +129,7 @@ public class Play{
 	if (p.getHand().size() > 13){
 	    for (int i = 0; i < 13;i++){
 		p.getHand().getCard(i).setXCor((GamePlay.myWidth/2
-						-((p.getHand().size()*75)/2))
+						-((13*75)/2))
 					       +i*75);
 		if(p.getHand().getCard(i).selected()){
 		    p.getHand().getCard(i).setYCor(450);
@@ -137,7 +140,7 @@ public class Play{
 	    }
 	    for (int i = 13; i < p.getHand().size();i++){
 		p.getHand().getCard(i).setXCor((GamePlay.myWidth/2
-					       -((p.getHand().size()*75)/2))
+						-(((p.getHand().size()-13)*75)/2))
 					       +(i-13)*75);
 		if(p.getHand().getCard(i).selected()){
 		    p.getHand().getCard(i).setYCor(570);
@@ -167,14 +170,14 @@ public class Play{
 
 	    for (int i = 0; i < 13;i++){
 		c.getHand().getCard(i).setXCor((GamePlay.myWidth/2
-					       -((c.getHand().size()*75)/2))
+					       -((13*75)/2))
 					       +i*75);
 		c.getHand().getCard(i).setYCor(130);
 		c.getHand().getCard(i).draw(g);
 	    }
 	    for (int i = 13; i < c.getHand().size();i++){
 		c.getHand().getCard(i).setXCor((GamePlay.myWidth/2
-					       -((c.getHand().size()*75)/2))
+						-(((c.getHand().size()-13)*75)/2))
 					       +(i-13)*75);
 		c.getHand().getCard(i).setYCor(10);
 		c.getHand().getCard(i).draw(g);

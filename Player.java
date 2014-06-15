@@ -32,6 +32,12 @@ public class Player {
 	return retStr;
     }
 
+    public void showHand(){
+	for(int i = 0; i < myHand.size();i++){
+	    myHand.getCard(i).trueFace();
+	}
+    }
+
     //ACCESSOR METHOD to the player's hand
     public Hand getHand(){
 	return myHand;
