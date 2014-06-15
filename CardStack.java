@@ -6,7 +6,7 @@ public class CardStack{
     private Stack<Card> stack;
 
 
-    public CardStack()
+    public CardStack(){
 	stack = new Stack<Card>();
     }
 

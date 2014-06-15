@@ -144,8 +144,8 @@ public class Card extends Component{
     }
 
     public boolean isBetween(float objeX, float objeY) {
-	if ((px+70 <= objeX && px >=objeX)) {
-	    if ((py <= objeY && py >=objeY)){
+	if ((px<= objeX && px+70>=objeX)) {
+	    if ((py<= objeY && py+100 >=objeY)){
 		return true;
 	    }
 	}return false;
