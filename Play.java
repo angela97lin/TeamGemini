@@ -43,7 +43,6 @@ public class Play{
 		}else{
 		    p.getHand().getCard(i).unselect();
 		}
-		System.out.println(p.getHand().getCard(i).getYCor());
 	    }
 	}
     }
@@ -72,7 +71,7 @@ public class Play{
 		if(p.getHand().getCard(i).selected()){
 		    p.getHand().getCard(i).setYCor(450);
 		}else{
-		    p.getHand().getCard(i).setYCor(440);
+		    p.getHand().getCard(i).setYCor(460);
 		}
 		p.getHand().getCard(i).draw(g);
 	    }
@@ -83,7 +82,7 @@ public class Play{
 		if(p.getHand().getCard(i).selected()){
 		    p.getHand().getCard(i).setYCor(570);
 		}else{
-		    p.getHand().getCard(i).setYCor(560);
+		    p.getHand().getCard(i).setYCor(580);
 		}
 		p.getHand().getCard(i).draw(g);
 	    }
@@ -93,7 +92,12 @@ public class Play{
 		p.getHand().getCard(i).setXCor((GamePlay.myWidth/2
 					       -((c.getHand().size()*75)/2))
 					       +i*75);
-		p.getHand().getCard(i).setYCor(450);
+		if(p.getHand().getCard(i).selected()){
+		    p.getHand().getCard(i).setYCor(450);
+		}
+		else{
+		    p.getHand().getCard(i).setYCor(460);
+		}
 		p.getHand().getCard(i).draw(g);
 	    }
 
