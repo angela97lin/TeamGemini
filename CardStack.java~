@@ -37,6 +37,7 @@ public class CardStack{
 	}
     }
 
+<<<<<<< HEAD
    
     public static void main(String[] args){
 	CardStack c = new CardStack();
@@ -45,4 +46,6 @@ public class CardStack{
 	System.out.println(c.pop(1));
     }
 
+=======
+>>>>>>> parent of 356764a... gotta make the same
 }
