@@ -11,6 +11,7 @@ public class Computer {
     private Hand hand;
     private ArrayList<String> goodEmotions;
     private ArrayList<String> badEmotions;
+    public static String emotion = "";
     private int trickery; //how good the computer will be at BS-ing
     private int gullibility; //how easily the computer can fall to someone else's BS
     public static int lvl; //Level of difficulty, 1-3 (1 = easy, 2 = medium, 3 = hard)
@@ -84,6 +85,9 @@ public class Computer {
      * behavior that corresponds with its trickery #
      * if trickery = 21, its behavior will be random (thus harder)
      */
+
+ 
+
     public void defineBehavior() {
         behaviors = new BehaviorQueue();
         int trick = trickery;
@@ -124,11 +128,10 @@ public class Computer {
         return x.getStr();
     }
 
-    public String makeMove(Graphics g) {
+    public void makeMove(Graphics g) {
 	Play.csPlaced = 0;
 	Random r = new Random();
        	int nextVal = Play.cs.expectedVal; //represents the value that
-        String retStr = "";//return string for emotions based on level and 
 	int temp = r.nextInt(goodEmotions.size());
 	int temp2 = r.nextInt(badEmotions.size());
 	int temp3 = r.nextInt(4); //0,1,2,3 --> 25 percent chance of bluff
@@ -141,22 +144,22 @@ public class Computer {
 		    Play.csPlaced ++;
 		}
 		if (lvl == 1){
-		    retStr = goodEmotions.get(temp);
+		    emotion = goodEmotions.get(temp);
 		}
 		if (lvl == 2){
 		    if (temp3 == 0){ //bluff
-			retStr = badEmotions.get(temp2);
+			emotion = badEmotions.get(temp2);
 		    }
 		    else {
-			retStr = goodEmotions.get(temp);
+			emotion = goodEmotions.get(temp);
 		    }
 		}
 		if (lvl == 3){ //amazing bluff --> 50% chance
 		    if (temp3 < 2){
-			retStr = badEmotions.get(temp2);
+			emotion = badEmotions.get(temp2);
 		    }
 		    else {
-			retStr = goodEmotions.get(temp);
+			emotion = goodEmotions.get(temp);
 		    }
 		}
 		Play.turn = true;
@@ -186,12 +189,11 @@ public class Computer {
 	*/
 	    defineBehavior();
 	    Behavior x = behaviors.dequeue();
-            retStr = x.getStr();
+            emotion = x.getStr();
             behaviors.enqueue(x);
-	    System.out.println(retStr);
-	    System.out.println("hi");
+	    // System.out.println(retStr);
+	    // System.out.println("hi");
 	} 
-	return retStr;
     }	
     
     public void hideFace(){

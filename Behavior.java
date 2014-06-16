@@ -57,7 +57,7 @@ public class Behavior {
      } */
     
     public static void setStr() {
-        response = adjective[trickery];
+        response = "The computer placed down the card " + adjective[trickery]+".";
     }
   
     

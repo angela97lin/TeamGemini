@@ -114,6 +114,9 @@ public class Play{
 	g.drawString("Next Card:" + cs.expectedVal,300,356);
 	if(turn){
 	    g.drawString("Placed:" + csPlaced,300,406);
+	    //System.out.println(c.emotion);
+	    g.drawString(c.emotion, 240,270);
+	    //g.drawString("HI", 200,200);
 	}else{
 	    g.drawString("Placed:"+placed,300,406);
 	}

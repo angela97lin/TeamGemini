@@ -12,7 +12,7 @@ import java.awt.image.*;
  * loading of the image of card with value and suit from an external file
  *****************************************************/
 
-public class Card extends Component implements Comparable {
+public class Card extends Component implements Comparable<Card> {
     
     //INSTANCE VARIABLES
     private int intValue; //contains numerical value of card (J = 11, Q = 12, A = 1, 2 = 2, etc.)
