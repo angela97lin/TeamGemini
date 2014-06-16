@@ -6,16 +6,19 @@
 import java.util.*;
 import java.io.*;
 
-public class Hand {
+public class Hand{
 
     private ArrayList<Card> hand;// = new ArrayList<Card>();
+    private ALHeap heap = new ALHeap();
     
     public Hand(){
 	hand = new ArrayList<Card>();
+	heap = new ALHeap();
     }
 
     public Hand(ArrayList<Card> h) {
-        hand = h;
+	hand = h;
+      
     }
     
     public ArrayList<Card> showHand() {
@@ -86,11 +89,19 @@ public class Hand {
 	hand.add(c);
 	sort();
     }
-    //will implement a sort of our choosing to sort the cards :)
-    public void sort() {
-	//create instance of sorting class
-	//call sorting class's sort method
-	//viola!
+
+    public ArrayList<Card> sort() {
+	//return ArrayList<Card> of sorted heap
+	int len = hand.size();
+	ArrayList<Card> sorted = new ArrayList<Card>();
+	for (int i = 0; i < len; i++){
+	    if (heap.isEmpty() != true){
+		sorted.add(heap.getMin());
+		heap.removeMin();
+	    }
+	}
+	
+	return sorted;
     }
 
     public Card getCard(int pos){
