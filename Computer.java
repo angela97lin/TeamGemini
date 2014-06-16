@@ -14,7 +14,7 @@ public class Computer {
     public static String emotion = "";
     private int trickery; //how good the computer will be at BS-ing
     private int gullibility; //how easily the computer can fall to someone else's BS
-    public static int lvl; //Level of difficulty, 1-3 (1 = easy, 2 = medium, 3 = hard)
+    //public static int lvl; //Level of difficulty, 1-3 (1 = easy, 2 = medium, 3 = hard)
     private BehaviorQueue behaviors;
     
     /*
@@ -28,7 +28,6 @@ public class Computer {
      * Gullibility from 1-21 Easy 1-7, Medium 8-14, Hard 15-21
      */
     public Computer(){
-	lvl = 1;
 	hand = new Hand();
 
 	goodEmotions = new ArrayList<String>();
@@ -51,15 +50,14 @@ public class Computer {
        
     }
     
-    public Computer(ArrayList<Card> cards, int lvl){
-	hand = new Hand(cards);
-        this.lvl = lvl;
-	//is this necessary
-	//sets stats based on lvl of the computer
-        if(lvl == 1) {
+    public Computer (int lvl){
+	hand = new Hand();
+        GamePlay.lvl = lvl;
+	//sets stats based on GamePlay.lvl of the computer
+        if(GamePlay.lvl == 1) {
             trickery = (int)(Math.random() * 6) + 1;
             gullibility = (int)(Math.random() * 6) + 1;
-        } else if(lvl == 3) {
+        } else if(GamePlay.lvl == 3) {
             trickery = (int)(Math.random() * 6) + 8;
             gullibility = (int)(Math.random() * 6) + 8;
         } else {
@@ -143,10 +141,10 @@ public class Computer {
 		    Play.cs.add(hand.remove(Play.cs.expectedVal));
 		    Play.csPlaced ++;
 		}
-		if (lvl == 1){
+		if (GamePlay.lvl == 1){
 		    emotion = goodEmotions.get(temp);
 		}
-		if (lvl == 2){
+		if (GamePlay.lvl == 2){
 		    if (temp3 == 0){ //bluff
 			emotion = badEmotions.get(temp2);
 		    }
@@ -154,7 +152,7 @@ public class Computer {
 			emotion = goodEmotions.get(temp);
 		    }
 		}
-		if (lvl == 3){ //amazing bluff --> 50% chance
+		if (GamePlay.lvl == 3){ //amazing bluff --> 50% chance
 		    if (temp3 < 2){
 			emotion = badEmotions.get(temp2);
 		    }
@@ -167,12 +165,12 @@ public class Computer {
 	    }
 	    else { //Computer does not have appropriate card
 		//for (int i = 0; i<temp3; i++){
-		//	if (lvl == 1 || lvl == 2){//random removal
+		//	if (GamePlay.lvl == 1 || GamePlay.lvl == 2){//random removal
 		//	    int randomCard = r.nextInt(hand.size());
 		//	    Play.cs.add(hand.remove(hand.get(randomCard)));
 		//	    Play.csPlaced ++;
 		//	}
-		//	else { //lvl 3: remove lowest card
+		//	else { //GamePlay.lvl 3: remove lowest card
 		Play.cs.add(hand.remove());
 		Play.csPlaced++;
 		//	}

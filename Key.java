@@ -69,6 +69,22 @@ public class Key implements MouseMotionListener, MouseListener{
 		GamePlay.ID=2;
 		GamePlay.stuff = 1;
 	    }
+	    //levels:
+	    if(e.getX()>420&&e.getX()<=620&&
+	       e.getY()>=425&&e.getY()<=490){
+		GamePlay.lvl = 1;
+		//System.out.println(GamePlay.lvl);
+	    }
+	    if(e.getX()>420&&e.getX()<=620&&
+	       e.getY()>=510&&e.getY()<=575){
+		GamePlay.lvl = 2;
+		//System.out.println(GamePlay.lvl);
+	    }
+	    if(e.getX()>420&&e.getX()<=620&&
+	       e.getY()>=583&&e.getY()<=653){
+		GamePlay.lvl = 3;
+		//System.out.println(GamePlay.lvl);
+	    }
 	    
 	}
 	if(GamePlay.state == 0){//menu
@@ -82,8 +98,8 @@ public class Key implements MouseMotionListener, MouseListener{
 		GamePlay.stuff = 1;
 	    }
 	}
-	//System.out.println(e.getX());
-	//System.out.println(e.getY());
+	System.out.println(e.getX());
+	System.out.println(e.getY());
 	
 	
     }

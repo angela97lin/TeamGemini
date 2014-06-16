@@ -20,6 +20,7 @@ public class GamePlay extends JPanel implements Runnable{
     public static int stuff;
     public Lose lose;
     public Win win;
+    public static int lvl;
 
     public GamePlay(Run run){
 	Run.driver.addMouseListener(new Key());
