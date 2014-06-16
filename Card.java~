@@ -22,6 +22,7 @@ public class Card extends Component{
     private boolean faceup;
     private int mx,my,px,py;
     private boolean select;
+    private boolean go;
 
     //CONSTRUCTOR - sets the intValue and suit
     public Card(int x, String s) {
@@ -58,6 +59,7 @@ public class Card extends Component{
 	mx = px;
 	my = py;
 	select = false;
+	go= false;
     }
 
     //public accessor to intValue
@@ -114,6 +116,10 @@ public class Card extends Component{
     public void falseFace(){
 	faceup = false;
     }
+
+    public void trueFace(){
+	faceup = true;
+    }
     
     public Dimension getPreferredSize() {
         if (img == null) {
@@ -127,13 +133,21 @@ public class Card extends Component{
 	px = val;
     }
 
+    public boolean getGo(){
+	return go;
+    }
+
     public void setYCor(int val){
 	py = val;
     }
 
-    public void reveal(int num){
-	changeFace();
+    public void reveal(Graphics g,int num,int check){
+	trueFace();
 	setXCor((GamePlay.myWidth/2+37)+num*75);
+	draw(g);
+	if(check == Play.cs.expectedVal){
+	    go = true;
+	}
     }
 
     public int getXCor(){

@@ -137,6 +137,10 @@ public class Card extends Component{
 	return go;
     }
 
+    public void resetGo(){
+	go = false;
+    }
+
     public void setYCor(int val){
 	py = val;
     }

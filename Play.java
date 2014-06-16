@@ -111,9 +111,15 @@ public class Play{
 	g.drawString("Go!",225,356);
 	g.drawString("BS!",225,406);
 	g.drawString("Unselect",200,306);
+	g.drawString("Next Card:" + cs.expectedVal,300,356);
 	if(!turn){
 	    if(countDown <= 0){
-		c.makeMove();
+		c.makeMove(g);
+		if (cs.expectedVal!=13){
+		    cs.expectedVal ++;
+		}else{
+		    cs.expectedVal = 0;
+		}
 		countDown = 1500;
 	    }
 	    

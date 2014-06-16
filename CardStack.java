@@ -15,9 +15,11 @@ public class CardStack{
 	stack = new Stack<Card>();
 	expectedVal = 1;
 	lol = new Stack<Card>();
+	who = true;
     }
 
     public void pop(Graphics g,int val){
+	stack.peek().resetGo();
 	stack.peek().reveal(g,val,expectedVal);
 	if (!stack.peek().getGo()){
 	    who = false;
@@ -28,7 +30,7 @@ public class CardStack{
 
     public void cardCollection(Hand l, Hand g){
 	while(lol.size()>0){
-	    if(!who){
+	    if(who){
 		l.add(lol.pop());
 	    }
 	    else{
@@ -36,7 +38,7 @@ public class CardStack{
 	    }
 	}
 	while(stack.size()>0){
-	    if(!who){
+	    if(who){
 		l.add(stack.pop());
 	    }
 	    else{

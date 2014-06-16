@@ -76,7 +76,7 @@ public class GamePlay extends JPanel implements Runnable{
 	while(true){
 	    if(!play.turn){
 		play.countDown--;
-		if(play.countDown == 0){
+		while(play.countDown == 0){
 		    repaint();
 		}
 	    }

@@ -23,8 +23,8 @@ public class GamePlay extends JPanel implements Runnable{
 	Run.driver.addMouseListener(new Key());
 	thread = new Thread(this);
 	thread.start();
-	Music m = new Music();
-	m.play();
+	//Music m = new Music();
+	//m.play();
 
 	try{
 	    myImage = ImageIO.read(new File("background.jpg"));
@@ -74,18 +74,24 @@ public class GamePlay extends JPanel implements Runnable{
     
     public void run(){
 	while(true){
-	    if(stuff != 0){
+	    if(!play.turn){
+		play.countDown--;
+		if(play.countDown == 0){
+		    repaint();
+		}
+	    }
+	    if (stuff == 1){
 		repaint();
 		stuff = 0;
 	    }
 
-	}
+	    
 
-	    /*try{
+	    try{
 		thread.sleep(1);//slows down running
-		}catch(Exception e){}*/
+	    }catch(Exception e){}
+	}
     }
-
 
 
 
