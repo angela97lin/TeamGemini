@@ -49,7 +49,7 @@ public class Hand {
     //and will return that card. (The return is for testing purposes)
     public Card remove(Card c) {
         hand.remove(hand.indexOf(c));
-	Play.cs.add(c);
+	//Play.cs.add(c);
         return c;
     }
     //removes first value

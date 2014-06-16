@@ -120,10 +120,10 @@ public class Play{
 	if(!turn){
 	    if(countDown <= 0){
 		c.makeMove(g);
-		if (cs.expectedVal!=13){
+		if (cs.expectedVal<13){
 		    cs.expectedVal ++;
 		}else{
-		    cs.expectedVal = 0;
+		    cs.expectedVal = 1;
 		}
 		countDown = 1500;
 	    }

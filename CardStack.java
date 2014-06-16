@@ -20,8 +20,8 @@ public class CardStack{
 
     public void pop(Graphics g,int val){
 	stack.peek().resetGo();
-	stack.peek().reveal(g,val,expectedVal);
-	if (stack.peek().getGo()){
+	stack.peek().reveal(g,val,expectedVal-1);
+	if (!stack.peek().getGo()){
 	    who = false;
 	}
 	lol.push(stack.pop());
