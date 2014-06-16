@@ -81,7 +81,7 @@ public class Hand{
             if (hand.get(i).getIntVal() == x) {
                 retCard = hand.get(i);
             }
-	}
+	} 
         return retCard;
     }
 
