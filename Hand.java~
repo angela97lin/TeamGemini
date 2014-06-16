@@ -66,9 +66,9 @@ public class Hand {
                 break;
             }
         }
-	if (retCard != null){
+	/*if (retCard != null){
 	    Play.cs.add(retCard);
-	}
+	    }*/
         return retCard;
     }
     

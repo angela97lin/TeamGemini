@@ -6,7 +6,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Hand {
+public class Hand{
 
     private ArrayList<Card> hand;// = new ArrayList<Card>();
     
