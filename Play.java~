@@ -111,9 +111,23 @@ public class Play{
 	g.drawString("Go!",225,356);
 	g.drawString("BS!",225,406);
 	g.drawString("Unselect",200,306);
+	g.drawString("Next Card:" + cs.expectedVal,300,356);
+	if(turn){
+	    g.drawString("Placed:" + csPlaced,300,406);
+	    //System.out.println(c.emotion);
+	    g.drawString(c.emotion, 240,270);
+	    //g.drawString("HI", 200,200);
+	}else{
+	    g.drawString("Placed:"+placed,300,406);
+	}
 	if(!turn){
 	    if(countDown <= 0){
-		c.makeMove();
+		c.makeMove(g);
+		if (cs.expectedVal<13){
+		    cs.expectedVal ++;
+		}else{
+		    cs.expectedVal = 1;
+		}
 		countDown = 1500;
 	    }
 	    
