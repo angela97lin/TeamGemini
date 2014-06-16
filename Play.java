@@ -112,6 +112,11 @@ public class Play{
 	g.drawString("BS!",225,406);
 	g.drawString("Unselect",200,306);
 	g.drawString("Next Card:" + cs.expectedVal,300,356);
+	if(turn){
+	    g.drawString("Placed:" + csPlaced,300,406);
+	}else{
+	    g.drawString("Placed:"+placed,300,406);
+	}
 	if(!turn){
 	    if(countDown <= 0){
 		c.makeMove(g);
