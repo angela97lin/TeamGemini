@@ -26,8 +26,8 @@ public class GamePlay extends JPanel implements Runnable{
 	Run.driver.addMouseListener(new Key());
 	thread = new Thread(this);
 	thread.start();
-	//Music m = new Music();
-	//m.play();
+	Music m = new Music();
+	m.play();
 
 	try{
 	    myImage = ImageIO.read(new File("background.jpg"));
