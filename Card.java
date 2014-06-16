@@ -161,9 +161,7 @@ public class Card extends Component{
     public int getYCor(){
 	return py;
     }
-    //pops up card when selected by changing xcor/ycor
-    public void move(){
-    }
+  
 
     public boolean isBetween(float objeX, float objeY) {
 	if ((px<= objeX && px+70>=objeX)) {
@@ -173,20 +171,5 @@ public class Card extends Component{
 	    }
 	}return false;
     }
-    public static void main(String[] args){
-	JFrame f = new JFrame( "Load Card Sample");
-	
-	Card c = new Card(2, "clover");
-	
-	f.addWindowListener(new WindowAdapter(){
-                public void windowClosing(WindowEvent e) {
-                    System.exit(0);
-                }
-            });
-
-	f.add(c);
-	f.pack();
-	f.setVisible(true);
-    }
-
+  
 } //end Card class

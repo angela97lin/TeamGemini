@@ -9,13 +9,15 @@ import java.io.*;
 public class Hand{
 
     private ArrayList<Card> hand;// = new ArrayList<Card>();
+    public Heapsort heapS = new Heapsort();
     
     public Hand(){
 	hand = new ArrayList<Card>();
     }
 
     public Hand(ArrayList<Card> h) {
-        hand = h;
+	hand = h;
+        //hand = heapS.sort(h);
     }
     
     public ArrayList<Card> showHand() {
