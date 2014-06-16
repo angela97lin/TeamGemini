@@ -18,6 +18,8 @@ public class GamePlay extends JPanel implements Runnable{
     public static Point p;
     public static Menu menu;
     public static int stuff;
+    public Lose lose;
+    public Win win;
 
     public GamePlay(Run run){
 	Run.driver.addMouseListener(new Key());
@@ -35,6 +37,8 @@ public class GamePlay extends JPanel implements Runnable{
 	state = 0;
 	ID = 1;
 	stuff = 0;
+	win = new Win();
+	lose = new Lose();
     }
 
     public void paintComponent(Graphics g){
@@ -56,10 +60,20 @@ public class GamePlay extends JPanel implements Runnable{
 	if(state == 0){
 	    menu.draw(g);
 	}
-	
+	else if (state == 1&&
+		 play.p.getHand().size()==0&&
+		 play.turn){
+	    win.draw(g);
+	}
+	else if(state == 1&&
+		play.c.getHand().size()==1&&
+		!play.turn){
+	    lose.draw(g);
+	}
 	else if (state == 1){
 	    play.draw(g);
 	}
+
 	else if (state == 2){
 	    setting.draw(g);
 	}
