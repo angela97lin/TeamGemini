@@ -47,6 +47,7 @@ public class CardStack{
 	}
 	GamePlay.play.p.showHand();
 	GamePlay.play.deselect();
+	GamePlay.play.p.getHand().sort();
 	GamePlay.play.c.hideFace();
 	who = true;
 	

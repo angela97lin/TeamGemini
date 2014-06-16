@@ -166,7 +166,6 @@ public class Card extends Component implements Comparable<Card> {
     public boolean isBetween(float objeX, float objeY) {
 	if ((px<= objeX && px+70>=objeX)) {
 	    if ((py+25<= objeY && py+125 >=objeY)){
-		System.out.println("hi");
 		return true;
 	    }
 	}return false;
